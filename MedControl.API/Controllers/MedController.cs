@@ -1,4 +1,4 @@
-using MedControl.Domain.Entities;
+﻿using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +11,12 @@ namespace MedControl.API.Controllers
 {
     [ApiController]
     [Route("api/med")]
-    public class GestaoMedicoController : ControllerBase
+    public class MedController : ControllerBase
     {
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
 
-        public GestaoMedicoController(IConfiguration configuration, IUserService userService)
+        public MedController(IConfiguration configuration, IUserService userService)
         {
             _configuration = configuration;
             _userService = userService;
@@ -46,7 +46,7 @@ namespace MedControl.API.Controllers
         [Authorize]
         public IActionResult Ping()
         {
-            return Ok(new { message = "Pong! Voc� est� autenticado." });
+            return Ok(new { message = "Pong! Vocï¿½ estï¿½ autenticado." });
         }
 
         [HttpPost("register")]
@@ -91,3 +91,4 @@ namespace MedControl.API.Controllers
         }
     }
 }
+

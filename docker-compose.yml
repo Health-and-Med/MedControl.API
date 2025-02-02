@@ -1,16 +1,17 @@
-services:
+﻿services:
   medcontrol_api:
     build:
       context: .
       dockerfile: MedControl.API/Dockerfile
     container_name: medcontrol_api
     ports:
-      - "5002:80"  # 🔹 Porta exposta corretamente
+      - "5002:80"  # ðŸ”¹ Porta exposta corretamente
     networks:
-      - monitoring_network  # 🔹 Compartilha a mesma redes
+      - monitoring_network  # ðŸ”¹ Compartilha a mesma redes
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
 networks:
   monitoring_network:
-    external: true  # 🔹 Garante que todas as APIs se comuniquem
+    external: true  # ðŸ”¹ Garante que todas as APIs se comuniquem
+

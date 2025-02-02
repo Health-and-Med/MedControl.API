@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,3 +26,4 @@ namespace MedControl.Domain.Entities
         public string Role { get; set; }
     }
 }
+

@@ -1,4 +1,4 @@
-using MedControl.Application.Services;
+﻿using MedControl.Application.Services;
 using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
 using Moq;
@@ -35,3 +35,4 @@ namespace MedControl.Tests
         }
     }
 }
+

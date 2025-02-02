@@ -1,4 +1,4 @@
-name: Deploy to Local Machine
+﻿name: Deploy to Local Machine
 
 on:
   push:
@@ -7,9 +7,9 @@ on:
 
 jobs:
   build_and_deploy:
-    runs-on: self-hosted  # Usará o agente instalado na sua máquina
+    runs-on: self-hosted  # UsarÃ¡ o agente instalado na sua mÃ¡quina
     steps:
-      - name: Checkout do Código
+      - name: Checkout do CÃ³digo
         uses: actions/checkout@v3
 
       - name: Instalar .NET SDK 8.0
@@ -17,16 +17,17 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restaurar Dependências
+      - name: Restaurar DependÃªncias
         run: dotnet restore
 
-      - name: Compilar a Aplicação
+      - name: Compilar a AplicaÃ§Ã£o
         run: dotnet build --configuration Release --no-restore
 
-      - name: Executar Testes Unitários
+      - name: Executar Testes UnitÃ¡rios
         run: dotnet test MedControl.Tests/MedControl.Tests.csproj --no-restore --verbosity normal
 
       - name: Construir e Subir o Docker Compose
         run: |
           docker-compose down
           docker-compose up --build -d
+

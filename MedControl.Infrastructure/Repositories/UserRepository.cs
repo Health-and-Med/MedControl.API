@@ -1,4 +1,4 @@
-using MedControl.Domain.Entities;
+﻿using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
 using Dapper;
 using System;
@@ -32,3 +32,4 @@ namespace MedControl.Infrastructure.Repositories
         }
     }
 }
+

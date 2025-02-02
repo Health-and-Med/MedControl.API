@@ -1,4 +1,4 @@
-using MedControl.Application.Services;
+ï»¿using MedControl.Application.Services;
 using MedControl.Domain.Interfaces;
 using MedControl.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,31 +11,23 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adicione a configuração da string de conexão
-string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-    throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+// ðŸ”¹ ConfiguraÃ§Ã£o da string de conexÃ£o com PostgreSQL
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-// Adicione serviços à coleção de injeção de dependência
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
-
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Adicione a conexão do banco de dados como um serviço
+// ðŸ”¹ ConexÃ£o com o banco de dados PostgreSQL
 builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
 
-// Adicione o serviço HostedService para o Consumer RabbitMQ
-//builder.Services.AddHostedService<UserRegisteredConsumerService>();
-
-// Adicione a configuração da string de conexão
-builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
-
-// ?? Configuração do JWT
+// ðŸ”¹ ConfiguraÃ§Ã£o do JWT (Deve ser igual Ã  configuraÃ§Ã£o da AuthMed API)
 var jwtConfig = builder.Configuration.GetSection("Jwt");
 var key = Encoding.ASCII.GetBytes(jwtConfig["Secret"]!);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication("Bearer") // ðŸ”¹ Nome do esquema deve ser igual ao do Ocelot
+    .AddJwtBearer("Bearer", options =>
     {
         options.RequireHttpsMetadata = false;
         options.SaveToken = true;
@@ -54,7 +46,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// ?? Configuração do Swagger para suportar JWT
+// ðŸ”¹ ConfiguraÃ§Ã£o do Swagger para suportar JWT
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedControl.API", Version = "v1" });
@@ -79,30 +71,32 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Inicialize o banco de dados
+// ðŸ”¹ Inicializa banco de dados (somente se necessÃ¡rio)
 using (var scope = app.Services.CreateScope())
 {
     var dbInitializer = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
     dbInitializer.Initialize();
 }
 
-// ?? Configuração do Swagger
+// ðŸ”¹ ConfiguraÃ§Ã£o do Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "MedControl.API V1");
-        c.DisplayRequestDuration(); // Mostra tempo de resposta das requisições
+        c.DisplayRequestDuration(); // Exibe tempo de resposta nas requisiÃ§Ãµes
     });
 }
 
-//app.UseHttpsRedirection();
+// ðŸ”¹ Middleware de autenticaÃ§Ã£o e autorizaÃ§Ã£o (na ordem correta)
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 app.Run();
 
+// ðŸ”¹ ConfiguraÃ§Ã£o do Swagger para proteger os endpoints autenticados
 public class AuthenticationRequirementsOperationFilter : IOperationFilter
 {
     public void Apply(OpenApiOperation operation, OperationFilterContext context)

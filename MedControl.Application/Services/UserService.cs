@@ -1,4 +1,4 @@
-using MedControl.Domain.Entities;
+ï»¿using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
 using Microsoft.Win32;
 using System;
@@ -19,7 +19,7 @@ namespace MedControl.Application.Services
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            // Usar uma chave fixa para HMACSHA512 (isso é para simplificação, para produção você deve usar um salt único para cada senha)
+            // Usar uma chave fixa para HMACSHA512 (isso Ã© para simplificaÃ§Ã£o, para produÃ§Ã£o vocÃª deve usar um salt Ãºnico para cada senha)
             _key = Encoding.UTF8.GetBytes("a-secure-key-of-your-choice");
         }
 
@@ -64,7 +64,7 @@ namespace MedControl.Application.Services
 
             User userExists = await GetUser(email);
             if (userExists != null)
-                throw new ValidationException("Usuário já existe na base.");
+                throw new ValidationException("UsuÃ¡rio jÃ¡ existe na base.");
 
             if (role == "doctor")
             {
@@ -74,7 +74,7 @@ namespace MedControl.Application.Services
             else 
             {
                 if (!string.IsNullOrEmpty(crm))
-                    throw new ValidationException("Esse perfil não possui CRM.");
+                    throw new ValidationException("Esse perfil nÃ£o possui CRM.");
             }
 
             var user = new User
@@ -112,3 +112,4 @@ namespace MedControl.Application.Services
         }
     }
 }
+

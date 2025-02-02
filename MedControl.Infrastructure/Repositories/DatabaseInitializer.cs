@@ -1,4 +1,4 @@
-using MedControl.Domain.Interfaces;
+Ôªøusing MedControl.Domain.Interfaces;
 using Dapper;
 using System.Data;
 using System.Security.Cryptography;
@@ -51,7 +51,7 @@ namespace MedControl.Infrastructure.Repositories
             //_dbConnection.Execute(createRegionsTableQuery);
             //_dbConnection.Execute(createContactsTableQuery);
 
-            // Adicionar usu·rio admin se n„o existir
+            // Adicionar usu√°rio admin se n√£o existir
             AddAdminUser();
         }
 
@@ -100,3 +100,4 @@ namespace MedControl.Infrastructure.Repositories
         }
     }
 }
+

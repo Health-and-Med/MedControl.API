@@ -1,4 +1,4 @@
-using MedControl.Domain.Entities;
+﻿using MedControl.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,3 +13,4 @@ namespace MedControl.Domain.Interfaces
         Task AddUserAsync(User user);
     }
 }
+
