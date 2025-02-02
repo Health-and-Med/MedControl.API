@@ -16,7 +16,7 @@ namespace MedControl.API.Controllers
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
 
-        public AuthController(IConfiguration configuration, IUserService userService)
+        public GestaoMedicoController(IConfiguration configuration, IUserService userService)
         {
             _configuration = configuration;
             _userService = userService;
