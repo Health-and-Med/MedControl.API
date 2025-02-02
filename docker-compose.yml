@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  medcontrol_api:
+    build:
+      context: .
+    container_name: medcontrol_api
+    ports:
+      - "5002:5002"
+    depends_on:
+      - db
+    networks:
+      - monitoring_network
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+networks:
+  monitoring_network:
+    external: true
