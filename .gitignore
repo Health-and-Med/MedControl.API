@@ -61,3 +61,6 @@ Thumbs.db
 *.vsidx
 /.vs/AuthMed.API/v17/DocumentLayout.json
 /.vs/AuthMed.API/v17/.futdcache.v2
+/.vs/MedControl.API/DesignTimeBuild/.dtbcache.v2
+/.vs/MedControl.API/v17/.futdcache.v2
+/.vs/MedControl.API/v17/DocumentLayout.json
