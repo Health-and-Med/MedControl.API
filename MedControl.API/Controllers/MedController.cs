@@ -1,5 +1,7 @@
-﻿using MedControl.Domain.Entities;
+﻿using MedControl.Application.Services;
+using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
+using MedControl.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -14,12 +16,14 @@ namespace MedControl.API.Controllers
     public class MedController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        private readonly IUserService _userService;
+        private readonly IMedicoService _medicoService;
+        private readonly IUsuariosMedicosService  _usuariosMedicosService;
 
-        public MedController(IConfiguration configuration, IUserService userService)
+        public MedController(IConfiguration configuration, IMedicoService  medicoService, IUsuariosMedicosService usuariosMedicosService)
         {
             _configuration = configuration;
-            _userService = userService;
+            _medicoService = medicoService;
+            _usuariosMedicosService = usuariosMedicosService;
         }
 
         [HttpPost("login")]
@@ -27,12 +31,12 @@ namespace MedControl.API.Controllers
         {
             try
             {
-                var user = await _userService.AuthenticateAsync(request.Email, request.Password);
+                var user = await _medicoService.AuthenticateAsync(request.Crm, request.Password);
                 if (user == null)
                     return Unauthorized();
 
 
-                var token = GenerateJwtToken(request.Email);
+                var token = GenerateJwtToken(request.Crm);
                 return Ok(new { token });
             }
             catch (Exception e)
@@ -42,21 +46,74 @@ namespace MedControl.API.Controllers
 
         }
 
-        [HttpGet("ping")]
+        [HttpPost("create")]
         [Authorize]
-        public IActionResult Ping()
-        {
-            return Ok(new { message = "Pong! Vocï¿½ estï¿½ autenticado." });
-        }
-
-        [HttpPost("register")]
-        [Authorize]
-        public async Task<IActionResult> Register([FromBody] RegisterModel register)
+        public async Task<IActionResult> Create([FromBody] RequestCreateMedicosModel register)
         {
             try
             {
-                await _userService.RegisterAsync(register.Username, register.Cpf, register.Crm, register.Email, register.Password, register.Role);
+                await _medicoService.CreateAsync(register);
                 return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("update")]
+        [Authorize]
+        public async Task<IActionResult> Update([FromBody] RequestUpdateMedicoModel register)
+        {
+            try
+            {
+                await _medicoService.UpdateAsync(register);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("delete")]
+        [Authorize]
+        public async Task<IActionResult> Delete([FromBody] MedicosModel register)
+        {
+            try
+            {
+                await _medicoService.DeleteAsync(register.Id.Value);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("getBySpecialty")]
+        [Authorize]
+        public async Task<IActionResult> GetBySpecialty([FromQuery] int specialtyId)
+        {
+            try
+            {
+                var medicos = await _medicoService.GetBySpecialty(specialtyId);
+                return Ok(medicos);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("getAll")]
+        [Authorize]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var medicos = await _medicoService.GetAllAsync();
+                return Ok(medicos);
             }
             catch (Exception e)
             {
@@ -89,6 +146,22 @@ namespace MedControl.API.Controllers
 
             return tokenHandler.WriteToken(token);
         }
+
+        [HttpGet("getAllSpecialties")]
+        [Authorize]
+        public async Task<IActionResult> GetAllSpecialty()
+        {
+            try
+            {
+                var medicos = await _medicoService.GetAllspecialtiesAsync();
+                return Ok(medicos);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
+
 

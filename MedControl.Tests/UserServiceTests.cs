@@ -1,6 +1,7 @@
 ﻿using MedControl.Application.Services;
 using MedControl.Domain.Entities;
 using MedControl.Domain.Interfaces;
+using MedControl.Infrastructure.Repositories;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -14,25 +15,25 @@ namespace MedControl.Tests
 {
     public class UserServiceTests
     {
-        private readonly Mock<IUserRepository> _mockContactRepository;
-        private readonly IUserService _userService;
+        private readonly Mock<IMedicoRepository> _mockContactRepository;
+        private readonly Mock<IUsuariosMedicosRepository> mockUsuarioRepository;
+        private readonly IMedicoService _userService;
 
 
         public UserServiceTests()
         {
-            _mockContactRepository = new Mock<IUserRepository>();
-            _userService = new UserService(_mockContactRepository.Object);
+            _mockContactRepository = new Mock<IMedicoRepository>();
+            mockUsuarioRepository = new Mock<IUsuariosMedicosRepository>();
+            _userService = new MedicoService(_mockContactRepository.Object, mockUsuarioRepository.Object);
         }
 
         [Fact]
         public async Task AddUser_ShouldThrowValidationException_WhenEmailIsEmpty()
         {
-            // Arrange
-            var region = new User { Username = "Teste", Email = "", Cpf = "00000", Role = "user", PasswordHash = "5454", Crm = "" };
-
             // Act & Assert
-            await Assert.ThrowsAsync<ValidationException>(() => _userService.RegisterAsync(region.Username, region.Cpf, region.Crm, region.Email, region.PasswordHash, region.Role));
+            await Assert.ThrowsAsync<ValidationException>(() => _userService.CreateAsync(new RequestCreateMedicosModel { Email = "", Crm = "", EspecialidadeId = 0, Nome = "", PrecoConsulta = 0, Usuario = new RequestCreateUsuarioMedicoModel { SenhaHash = "123456" } }));
         }
     }
 }
+
 

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MedControl.Domain.Interfaces
+namespace MedControl.Domain.Entities
 {
-    public interface IDatabaseInitializer
+    public class RequestUpdateUsuarioMedico
     {
-        void Initialize();
+        public string SenhaHash { get; set; }
     }
 }
-
-

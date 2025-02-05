@@ -3,53 +3,54 @@ using Dapper;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using MedControl.Domain.Entities;
 
 namespace MedControl.Infrastructure.Repositories
 {
     public class DatabaseInitializer : IDatabaseInitializer
     {
         private readonly IDbConnection _dbConnection;
+        private readonly IMedicoService _medicoService;
 
-        public DatabaseInitializer(IDbConnection dbConnection)
+        public DatabaseInitializer(IDbConnection dbConnection, IMedicoService medicoService)
         {
             _dbConnection = dbConnection;
+            _medicoService = medicoService;
         }
 
         public void Initialize()
         {
-            var createUsersTableQuery = @"
-                CREATE TABLE IF NOT EXISTS Users (
+            var createMedicosTableQuery = @"
+                CREATE TABLE IF NOT EXISTS Medicos (
                     Id SERIAL PRIMARY KEY,
-                    Username VARCHAR(50) NOT NULL,
-                    Cpf VARCHAR(50) NOT NULL,
-                    Crm VARCHAR(50),
+                    Nome VARCHAR(50) NOT NULL,
+                    Crm VARCHAR(50) NOT NULL,
+                    EspecialidadeId INT NOT NULL,
                     Email VARCHAR(255) NOT NULL,
-                    PasswordHash TEXT NOT NULL,
-                    Role VARCHAR(50)
+                    PrecoConsulta DECIMAL(10,2)
                 );
             ";
 
-            //var createRegionsTableQuery = @"
-            //    CREATE TABLE IF NOT EXISTS Regions (
-            //        DDD VARCHAR(3) PRIMARY KEY,
-            //        Name VARCHAR(100) NOT NULL
-            //    );
-            //";
+            var createUserMedicosTableQuery = @"
+                CREATE TABLE IF NOT EXISTS UsuariosMedicos (
+                    Id SERIAL PRIMARY KEY,
+                    MedicoId INT,
+                    SenhaHash TEXT
+                );
+            ";
 
-            //var createContactsTableQuery = @"
-            //    CREATE TABLE IF NOT EXISTS Contacts (
-            //        Id SERIAL PRIMARY KEY,
-            //        Name VARCHAR(100) NOT NULL,
-            //        Phone VARCHAR(15) NOT NULL,
-            //        Email VARCHAR(100) NOT NULL,
-            //        DDD VARCHAR(3) NOT NULL,
-            //        CONSTRAINT fk_Contacts_Regions FOREIGN KEY (DDD) REFERENCES Regions(DDD)
-            //    );
-            //";
+            var createEspecialidadesTableQuery = @"
+                CREATE TABLE IF NOT EXISTS Especialidades (
+                    Id SERIAL PRIMARY KEY,
+                    Nome TEXT
+                );
+            ";
 
-            _dbConnection.Execute(createUsersTableQuery);
-            //_dbConnection.Execute(createRegionsTableQuery);
-            //_dbConnection.Execute(createContactsTableQuery);
+
+            _dbConnection.Execute(createMedicosTableQuery);
+            _dbConnection.Execute(createUserMedicosTableQuery);
+            _dbConnection.Execute(createEspecialidadesTableQuery);
+            
 
             // Adicionar usuário admin se não existir
             AddAdminUser();
@@ -57,47 +58,102 @@ namespace MedControl.Infrastructure.Repositories
 
         private void AddAdminUser()
         {
-            var adminUsername = "admin";
-            var adminPassword = "123456";
-            var adminRole = "Admin";
-            var cpf = "00000000000";
-            var crm = "";
-            var email = "devs@email.com";
-
-            var checkAdminUserQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
-            var adminUserCount = _dbConnection.ExecuteScalar<int>(checkAdminUserQuery, new { Username = adminUsername });
-
-            if (adminUserCount == 0)
+            try
             {
-                var passwordHash = CreatePasswordHash(adminPassword);
-                var insertAdminUserQuery = @"
-            INSERT INTO Users (Username, Cpf, Crm, Email, PasswordHash, Role)
-            VALUES (@Username,@Cpf, @Crm, @Email, @PasswordHash, @Role);
-        ";
+                RequestCreateMedicosModel medico = new RequestCreateMedicosModel();
+                medico.Crm = "123456-78/SP";
+                medico.Email = "devs@email.com";
+                medico.PrecoConsulta = 200;
+                medico.EspecialidadeId = 1;
+                medico.Nome = "Devs";
+                medico.Usuario = new RequestCreateUsuarioMedicoModel();
+                medico.Usuario.SenhaHash = "123456";
 
-                var adminUser = new
+                var checkAdminUserQuery = "SELECT COUNT(*) FROM Medicos WHERE Crm = @Crm";
+                var adminUserCount = _dbConnection.ExecuteScalar<int>(checkAdminUserQuery, new { crm = medico.Crm });
+
+                
+
+                if (adminUserCount == 0)
                 {
-                    Username = adminUsername,
-                    Cpf = cpf,
-                    Crm = crm,
-                    Email = email,
-                    PasswordHash = passwordHash,
-                    Role = adminRole
-                };
+                    _medicoService.CreateAsync(medico);
+                }
 
-                _dbConnection.Execute(insertAdminUserQuery, adminUser);
+                var checkEspecialidadesQuery = "SELECT COUNT(*) FROM Especialidades";
+                var especialidadesCount = _dbConnection.ExecuteScalar<int>(checkEspecialidadesQuery);
+
+                if(especialidadesCount == 0)
+                    _dbConnection.ExecuteScalar<int>($@"
+                        INSERT INTO Especialidades (Nome) VALUES
+                            ('Alergologia'),
+                            ('Anestesiologia'),
+                            ('Angiologia'),
+                            ('Cardiologia'),
+                            ('Cirurgia Cardiovascular'),
+                            ('Cirurgia da Mão'),
+                            ('Cirurgia de Cabeça e Pescoço'),
+                            ('Cirurgia do Aparelho Digestivo'),
+                            ('Cirurgia Geral'),
+                            ('Cirurgia Oncológica'),
+                            ('Cirurgia Pediátrica'),
+                            ('Cirurgia Plástica'),
+                            ('Cirurgia Torácica'),
+                            ('Cirurgia Vascular'),
+                            ('Clínica Médica'),
+                            ('Coloproctologia'),
+                            ('Dermatologia'),
+                            ('Endocrinologia e Metabologia'),
+                            ('Endoscopia'),
+                            ('Gastroenterologia'),
+                            ('Genética Médica'),
+                            ('Geriatria'),
+                            ('Ginecologia e Obstetrícia'),
+                            ('Hematologia e Hemoterapia'),
+                            ('Homeopatia'),
+                            ('Infectologia'),
+                            ('Mastologia'),
+                            ('Medicina de Emergência'),
+                            ('Medicina de Família e Comunidade'),
+                            ('Medicina do Trabalho'),
+                            ('Medicina do Tráfego'),
+                            ('Medicina Esportiva'),
+                            ('Medicina Física e Reabilitação'),
+                            ('Medicina Intensiva'),
+                            ('Medicina Legal e Perícia Médica'),
+                            ('Medicina Nuclear'),
+                            ('Medicina Preventiva e Social'),
+                            ('Nefrologia'),
+                            ('Neurocirurgia'),
+                            ('Neurologia'),
+                            ('Nutrologia'),
+                            ('Oftalmologia'),
+                            ('Oncologia Clínica'),
+                            ('Ortopedia e Traumatologia'),
+                            ('Otorrinolaringologia'),
+                            ('Patologia'),
+                            ('Patologia Clínica/Medicina Laboratorial'),
+                            ('Pediatria'),
+                            ('Pneumologia'),
+                            ('Psiquiatria'),
+                            ('Radiologia e Diagnóstico por Imagem'),
+                            ('Radioterapia'),
+                            ('Reumatologia'),
+                            ('Urologia');
+
+                                                        
+                                                        ");
+
+
+
             }
-        }
-
-        private string CreatePasswordHash(string password)
-        {
-            using (var hmac = new HMACSHA512(Encoding.UTF8.GetBytes("a-secure-key-of-your-choice")))
+            catch (Exception e)
             {
-                var passwordBytes = Encoding.UTF8.GetBytes(password);
-                var hash = hmac.ComputeHash(passwordBytes);
-                return Convert.ToBase64String(hash);
+
+                throw;
             }
+            
         }
     }
 }
+
 

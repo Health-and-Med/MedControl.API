@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace MedControl.Domain.Entities
 {
-    public class LoginModel
+    public class RequestCreateUsuarioMedicoModel
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string SenhaHash { get; set; }
     }
 }
-

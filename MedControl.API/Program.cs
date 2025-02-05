@@ -11,13 +11,24 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 🔹 Configurar leitura de arquivos de configuração
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory()) // Define o diretório base
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) // Carrega appsettings.json
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true) // Carrega appsettings.Development.json em ambiente de dev
+    .AddEnvironmentVariables(); // Permite sobrescrever via variáveis de ambiente
+
+
 // 🔹 Configuração da string de conexão com PostgreSQL
 string connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IMedicoRepository, MedicoRepository>();
+builder.Services.AddScoped<IUsuariosMedicosRepository, UsuariosMedicosRepository>();
 builder.Services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IMedicoService, MedicoService>();
+builder.Services.AddScoped<IUsuariosMedicosService, UsuariosMedicosService>();
 
 // 🔹 Conexão com o banco de dados PostgreSQL
 builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
@@ -25,6 +36,7 @@ builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionS
 // 🔹 Configuração do JWT (Deve ser igual à configuração da AuthMed API)
 var jwtConfig = builder.Configuration.GetSection("Jwt");
 var key = Encoding.ASCII.GetBytes(jwtConfig["Secret"]!);
+
 
 builder.Services.AddAuthentication("Bearer") // 🔹 Nome do esquema deve ser igual ao do Ocelot
     .AddJwtBearer("Bearer", options =>
@@ -68,6 +80,7 @@ builder.Services.AddSwaggerGen(c =>
     });
     c.OperationFilter<AuthenticationRequirementsOperationFilter>();
 });
+
 
 var app = builder.Build();
 
@@ -114,4 +127,5 @@ public class AuthenticationRequirementsOperationFilter : IOperationFilter
         });
     }
 }
+
 
