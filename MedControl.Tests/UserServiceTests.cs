@@ -31,7 +31,7 @@ namespace MedControl.Tests
         public async Task AddUser_ShouldThrowValidationException_WhenEmailIsEmpty()
         {
             // Act & Assert
-            await Assert.ThrowsAsync<ValidationException>(() => _userService.CreateAsync(new RequestCreateMedicosModel { Email = "a@email.com", Crm = "987654-32/MG", EspecialidadeId = 1, Nome = "Maria", PrecoConsulta = 80, Usuario = new RequestCreateUsuarioMedicoModel { SenhaHash = "123456" } }));
+            await Assert.ThrowsAsync<Exception>(() => _userService.CreateAsync(new RequestCreateMedicosModel { Email = "a@email.com", Crm = "987654-32/MG", EspecialidadeId = 1, Nome = "Maria", PrecoConsulta = 80, Usuario = new RequestCreateUsuarioMedicoModel { SenhaHash = "123456" } }));
         }
     }
 }

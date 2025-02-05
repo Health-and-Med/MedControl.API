@@ -66,18 +66,25 @@ namespace MedControl.Application.Services
 
                 var medicoExist = await _medicoRepository.GetUserByCrmAsync(medico.Crm);
 
-                if(medicoExist != null)
+                if (medicoExist != null)
                     throw new Exception("Médico já registrado.");
 
                 medico.Usuario.SenhaHash = CreatePasswordHash(medico.Usuario.SenhaHash);
 
                 var newMedico = await _medicoRepository.CreateAsync(medico);
 
-                newMedico.Usuario = new UsuariosMedicosModel {  MedicoId = newMedico.Id, SenhaHash = medico.Usuario.SenhaHash};
+                if (newMedico != null)
+                {
+                    newMedico.Usuario = new UsuariosMedicosModel { MedicoId = newMedico.Id, SenhaHash = medico.Usuario.SenhaHash };
 
-                if (newMedico.Usuario == null || newMedico.Id == 0)
-                    throw new ArgumentNullException("Erro ao Criar médico.");
-                await _usuariosMedicosRepository.CreateAsync(medico.Usuario, newMedico.Id.Value);
+                    if (newMedico.Id == 0)
+                        throw new ArgumentNullException("Erro ao Criar médico.");
+                    await _usuariosMedicosRepository.CreateAsync(medico.Usuario, newMedico.Id.Value);
+                }
+                else 
+                {
+                    throw new Exception("Erro ao Cadastrar médico");
+                }
             }
             catch (Exception e)
             {
