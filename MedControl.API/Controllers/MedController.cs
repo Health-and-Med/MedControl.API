@@ -17,9 +17,9 @@ namespace MedControl.API.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IMedicoService _medicoService;
-        private readonly IUsuariosMedicosService  _usuariosMedicosService;
+        private readonly IUsuariosMedicosService _usuariosMedicosService;
 
-        public MedController(IConfiguration configuration, IMedicoService  medicoService, IUsuariosMedicosService usuariosMedicosService)
+        public MedController(IConfiguration configuration, IMedicoService medicoService, IUsuariosMedicosService usuariosMedicosService)
         {
             _configuration = configuration;
             _medicoService = medicoService;
@@ -36,7 +36,7 @@ namespace MedControl.API.Controllers
                     return Unauthorized();
 
 
-                var token = GenerateJwtToken(request.Crm);
+                var token = GenerateJwtToken(user.Id.Value, user.Email);
                 return Ok(new { token });
             }
             catch (Exception e)
@@ -121,15 +121,17 @@ namespace MedControl.API.Controllers
             }
         }
 
-        private string GenerateJwtToken(string email)
+        private string GenerateJwtToken(int medicoId, string email)
         {
             var jwtConfig = _configuration.GetSection("Jwt");
             var key = Encoding.ASCII.GetBytes(jwtConfig["Secret"]!);
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email, email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.NameIdentifier, medicoId.ToString()), //  ID do usuário
+                new Claim(ClaimTypes.Role, "doctor"),
+                new Claim(ClaimTypes.Name, email) //  E-mail do usuário
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor
