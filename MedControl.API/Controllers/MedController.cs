@@ -5,6 +5,7 @@ using MedControl.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -67,7 +68,13 @@ namespace MedControl.API.Controllers
         {
             try
             {
-                await _medicoService.UpdateAsync(register);
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+                var role = User.FindFirst(ClaimTypes.Role).Value;
+
+                if (role != "doctor" && role != "admin")
+                    return Forbid("Somente o perfil Médico poderá marcar consulta.");
+
+                await _medicoService.UpdateAsync(register, userId);
                 return Ok();
             }
             catch (Exception e)
@@ -82,6 +89,12 @@ namespace MedControl.API.Controllers
         {
             try
             {
+                var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+                var role = User.FindFirst(ClaimTypes.Role).Value;
+
+                if (role != "doctor" && role != "admin")
+                    return Forbid("Somente o perfil Médico poderá marcar consulta.");
+
                 await _medicoService.DeleteAsync(register.Id.Value);
                 return Ok();
             }

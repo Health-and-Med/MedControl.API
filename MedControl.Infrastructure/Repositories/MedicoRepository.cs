@@ -141,7 +141,7 @@ namespace MedControl.Infrastructure.Repositories
 
 
         }
-        public async Task UpdateAsync(RequestUpdateMedicoModel medico)
+        public async Task UpdateAsync(RequestUpdateMedicoModel medico, int medicoId)
         {
             try
             {
@@ -158,10 +158,10 @@ namespace MedControl.Infrastructure.Repositories
                                 Email = @Email,
                                 PrecoConsulta = @PrecoConsulta 
                           WHERE 
-                            Id = @Id", medico);
+                            Id = @Id", new { medico.Nome, medico.EspecialidadeId, medico.Email, medico.PrecoConsulta, Id = medicoId });
                 }
 
-                await _usuariosMedicosRepository.UpdateAsync(medico.Usuario, medico.Id);
+                await _usuariosMedicosRepository.UpdateAsync(medico.Usuario, medicoId);
             }
             catch (Exception e)
             {

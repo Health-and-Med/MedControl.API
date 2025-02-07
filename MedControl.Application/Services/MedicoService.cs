@@ -182,18 +182,18 @@ namespace MedControl.Application.Services
             }
         }
 
-        public async Task UpdateAsync(RequestUpdateMedicoModel medico)
+        public async Task UpdateAsync(RequestUpdateMedicoModel medico, int medicoId)
         {
             List<string> erros = medico.ValidateModel();
 
             if (erros.Count > 0)
                 throw new Exception(string.Join("\n", erros));
 
-            var medicoExist = await _medicoRepository.GetByIdAsync(medico.Id);
+            var medicoExist = await _medicoRepository.GetByIdAsync(medicoId);
             if (medicoExist == null)
                 throw new Exception("Médico não encontrado.");
             medico.Usuario.SenhaHash = CreatePasswordHash(medico.Usuario.SenhaHash);
-            await _medicoRepository.UpdateAsync(medico);
+            await _medicoRepository.UpdateAsync(medico, medicoId);
         }
 
         public async Task DeleteAsync(int medicoId)

@@ -6,7 +6,7 @@ namespace MedControl.Infrastructure.Repositories
     {
         Task<MedicosModel> GetUserByCrmAsync(string crm);
         Task<MedicosModel> CreateAsync(RequestCreateMedicosModel medico);
-        Task UpdateAsync(RequestUpdateMedicoModel medico);
+        Task UpdateAsync(RequestUpdateMedicoModel medico, int medicoId);
         Task DeleteAsync(int medicoId);
         Task<MedicosModel> GetByIdAsync(int id);
         Task<IEnumerable<MedicosModel>> GetAllAsync();

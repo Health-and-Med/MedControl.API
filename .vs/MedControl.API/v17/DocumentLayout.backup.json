@@ -7,32 +7,52 @@
       "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\controllers\\medcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.application\\services\\medicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|solutionrelative:medcontrol.application\\services\\medicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.infrastructure\\repositories\\medicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|solutionrelative:medcontrol.infrastructure\\repositories\\medicorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.domain\\interfaces\\imedicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|solutionrelative:medcontrol.domain\\interfaces\\imedicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.domain\\entities\\requestupdatemedicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|solutionrelative:medcontrol.domain\\entities\\requestupdatemedicomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9A417BE-A99B-4B4B-9699-F18EE5ACAED2}|MedControl.Tests\\MedControl.Tests.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.tests\\medcontrol.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C9A417BE-A99B-4B4B-9699-F18EE5ACAED2}|MedControl.Tests\\MedControl.Tests.csproj|solutionrelative:medcontrol.tests\\medcontrol.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.application\\services\\usuariosmedicosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|solutionrelative:medcontrol.application\\services\\usuariosmedicosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.domain\\interfaces\\iusuariosmedicosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|solutionrelative:medcontrol.domain\\interfaces\\iusuariosmedicosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.infrastructure\\repositories\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|solutionrelative:medcontrol.infrastructure\\repositories\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.application\\services\\medicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C3471B8-B94B-4386-8570-2B1C27027084}|MedControl.Application\\MedControl.Application.csproj|solutionrelative:medcontrol.application\\services\\medicoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.infrastructure\\repositories\\usuariosmedicosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B406CCDE-83BD-4B94-BF8A-865E4921A4E0}|MedControl.Infrastructure\\MedControl.Infrastructure.csproj|solutionrelative:medcontrol.infrastructure\\repositories\\usuariosmedicosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C9A417BE-A99B-4B4B-9699-F18EE5ACAED2}|MedControl.Tests\\MedControl.Tests.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.tests\\medcontrol.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C9A417BE-A99B-4B4B-9699-F18EE5ACAED2}|MedControl.Tests\\MedControl.Tests.csproj|solutionrelative:medcontrol.tests\\medcontrol.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.domain\\entities\\requestupdateusuariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78885529-FBCE-4B26-A031-5D7CFBC75B1E}|MedControl.Domain\\MedControl.Domain.csproj|solutionrelative:medcontrol.domain\\entities\\requestupdateusuariomedico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C9A417BE-A99B-4B4B-9699-F18EE5ACAED2}|MedControl.Tests\\MedControl.Tests.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.tests\\userservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,24 +66,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMedicoService.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Interfaces\\IMedicoService.cs",
+              "RelativeDocumentMoniker": "MedControl.Domain\\Interfaces\\IMedicoService.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Interfaces\\IMedicoService.cs*",
+              "RelativeToolTip": "MedControl.Domain\\Interfaces\\IMedicoService.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAawAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T20:46:23.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUsuariosMedicosService.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Interfaces\\IUsuariosMedicosService.cs",
+              "RelativeDocumentMoniker": "MedControl.Domain\\Interfaces\\IUsuariosMedicosService.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Interfaces\\IUsuariosMedicosService.cs",
+              "RelativeToolTip": "MedControl.Domain\\Interfaces\\IUsuariosMedicosService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T20:29:50.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsuariosMedicosService.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\UsuariosMedicosService.cs",
+              "RelativeDocumentMoniker": "MedControl.Application\\Services\\UsuariosMedicosService.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\UsuariosMedicosService.cs",
+              "RelativeToolTip": "MedControl.Application\\Services\\UsuariosMedicosService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA3wA4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:41:35.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RequestUpdateUsuarioMedico.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Entities\\RequestUpdateUsuarioMedico.cs",
+              "RelativeDocumentMoniker": "MedControl.Domain\\Entities\\RequestUpdateUsuarioMedico.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Entities\\RequestUpdateUsuarioMedico.cs",
+              "RelativeToolTip": "MedControl.Domain\\Entities\\RequestUpdateUsuarioMedico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:34:08.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UsuariosMedicosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\UsuariosMedicosRepository.cs",
+              "RelativeDocumentMoniker": "MedControl.Infrastructure\\Repositories\\UsuariosMedicosRepository.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\UsuariosMedicosRepository.cs",
+              "RelativeToolTip": "MedControl.Infrastructure\\Repositories\\UsuariosMedicosRepository.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAswHgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-07T19:29:53.557Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MedController.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Controllers\\MedController.cs",
               "RelativeDocumentMoniker": "MedControl.API\\Controllers\\MedController.cs",
-              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Controllers\\MedController.cs",
-              "RelativeToolTip": "MedControl.API\\Controllers\\MedController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAIA+wIQAAAAyAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Controllers\\MedController.cs*",
+              "RelativeToolTip": "MedControl.API\\Controllers\\MedController.cs*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAkwEwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-06T23:03:52.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "appsettings.Production.json",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\appsettings.Production.json",
               "RelativeDocumentMoniker": "MedControl.API\\appsettings.Production.json",
@@ -75,27 +160,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Program.cs",
               "RelativeDocumentMoniker": "MedControl.API\\Program.cs",
               "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Program.cs",
               "RelativeToolTip": "MedControl.API\\Program.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABcAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T22:37:37.305Z"
+              "WhenOpened": "2025-02-06T22:37:37.305Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MedicoRepository.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
               "RelativeDocumentMoniker": "MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
               "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
               "RelativeToolTip": "MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAwwNgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAwwJ0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T21:55:29.44Z"
+              "WhenOpened": "2025-02-06T21:55:29.44Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -105,37 +192,40 @@
               "RelativeDocumentMoniker": "MedControl.Domain\\Entities\\RequestUpdateMedicoModel.cs",
               "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Entities\\RequestUpdateMedicoModel.cs",
               "RelativeToolTip": "MedControl.Domain\\Entities\\RequestUpdateMedicoModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T21:55:24.366Z"
+              "WhenOpened": "2025-02-06T21:55:24.366Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
               "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
               "RelativeToolTip": "MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwB0AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAYwJoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T21:44:08.734Z"
+              "WhenOpened": "2025-02-06T21:44:08.734Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "MedicoService.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\MedicoService.cs",
               "RelativeDocumentMoniker": "MedControl.Application\\Services\\MedicoService.cs",
-              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\MedicoService.cs",
-              "RelativeToolTip": "MedControl.Application\\Services\\MedicoService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAjwEsAAAAQAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\MedicoService.cs*",
+              "RelativeToolTip": "MedControl.Application\\Services\\MedicoService.cs*",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAkwMMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T23:46:53.309Z"
+              "WhenOpened": "2025-02-05T23:46:53.309Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "UserServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Tests\\UserServiceTests.cs",
               "RelativeDocumentMoniker": "MedControl.Tests\\UserServiceTests.cs",
@@ -147,15 +237,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "MedControl.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Tests\\MedControl.Tests.csproj",
               "RelativeDocumentMoniker": "MedControl.Tests\\MedControl.Tests.csproj",
               "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Tests\\MedControl.Tests.csproj",
               "RelativeToolTip": "MedControl.Tests\\MedControl.Tests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-05T23:43:24.325Z"
+              "WhenOpened": "2025-02-05T23:43:24.325Z",
+              "EditorCaption": ""
             }
           ]
         }

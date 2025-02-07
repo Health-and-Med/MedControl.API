@@ -9,7 +9,7 @@ namespace MedControl.Domain.Interfaces
         Task<MedicosModel> GetByIdAsync(int id);
         Task<IEnumerable<MedicosModel>> GetAllAsync();
         Task<List<MedicosModel>> GetBySpecialty(int especialidadeId);
-        Task UpdateAsync(RequestUpdateMedicoModel medico);
+        Task UpdateAsync(RequestUpdateMedicoModel medico, int userId);
         Task DeleteAsync(int medicoId);
         Task<IEnumerable<EspecialidadesModel>> GetAllspecialtiesAsync();
     }

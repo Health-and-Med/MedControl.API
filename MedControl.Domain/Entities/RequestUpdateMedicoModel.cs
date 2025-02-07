@@ -10,38 +10,12 @@ namespace MedControl.Domain.Entities
     public class RequestUpdateMedicoModel
     {
 
-        public int Id { get; set; }
         public string Nome { get; set; }
         public int? EspecialidadeId { get; set; }
         public string Email { get; set; }
         public decimal? PrecoConsulta { get; set; }
         public RequestUpdateUsuarioMedico Usuario { get; set; }
 
-        private bool ValidarCrm(string crm)
-        {
-            try
-            {
-                string pattern = @"^\d{6}-\d{2}/[A-Z]{2}$";
-                Regex regex = new Regex(pattern);
-
-                //string crm = "123456-78/SP";
-
-                if (regex.IsMatch(crm))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
-
-        }
 
         public List<string> ValidateModel()
         {
