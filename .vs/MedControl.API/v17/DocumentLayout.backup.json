@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\controllers\\medcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\controllers\\medcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|c:\\users\\matheus\\documents\\fiap\\hackaton\\medcontrol.api\\medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9424C95A-4BFD-4FE8-A70B-D87A1437E611}|MedControl.API\\MedControl.API.csproj|solutionrelative:medcontrol.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -47,6 +51,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MedController.cs",
+              "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Controllers\\MedController.cs",
+              "RelativeDocumentMoniker": "MedControl.API\\Controllers\\MedController.cs",
+              "ToolTip": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Controllers\\MedController.cs",
+              "RelativeToolTip": "MedControl.API\\Controllers\\MedController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAIA+wIQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T23:03:52.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.Production.json",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\appsettings.Production.json",
               "RelativeDocumentMoniker": "MedControl.API\\appsettings.Production.json",
@@ -54,12 +71,11 @@
               "RelativeToolTip": "MedControl.API\\appsettings.Production.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-06T22:46:12.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T22:46:12.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.API\\Program.cs",
               "RelativeDocumentMoniker": "MedControl.API\\Program.cs",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "MedControl.API\\Program.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T22:37:37.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T22:37:37.305Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MedicoRepository.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
               "RelativeDocumentMoniker": "MedControl.Infrastructure\\Repositories\\MedicoRepository.cs",
@@ -84,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RequestUpdateMedicoModel.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Domain\\Entities\\RequestUpdateMedicoModel.cs",
               "RelativeDocumentMoniker": "MedControl.Domain\\Entities\\RequestUpdateMedicoModel.cs",
@@ -96,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DatabaseInitializer.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
               "RelativeDocumentMoniker": "MedControl.Infrastructure\\Repositories\\DatabaseInitializer.cs",
@@ -108,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MedicoService.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Application\\Services\\MedicoService.cs",
               "RelativeDocumentMoniker": "MedControl.Application\\Services\\MedicoService.cs",
@@ -120,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Tests\\UserServiceTests.cs",
               "RelativeDocumentMoniker": "MedControl.Tests\\UserServiceTests.cs",
@@ -132,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MedControl.Tests.csproj",
               "DocumentMoniker": "C:\\Users\\Matheus\\Documents\\FIAP\\HACKATON\\MedControl.API\\MedControl.Tests\\MedControl.Tests.csproj",
               "RelativeDocumentMoniker": "MedControl.Tests\\MedControl.Tests.csproj",
