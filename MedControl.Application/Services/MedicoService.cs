@@ -192,7 +192,7 @@ namespace MedControl.Application.Services
             var medicoExist = await _medicoRepository.GetByIdAsync(medico.Id);
             if (medicoExist == null)
                 throw new Exception("Médico não encontrado.");
-
+            medico.Usuario.SenhaHash = CreatePasswordHash(medico.Usuario.SenhaHash);
             await _medicoRepository.UpdateAsync(medico);
         }
 
