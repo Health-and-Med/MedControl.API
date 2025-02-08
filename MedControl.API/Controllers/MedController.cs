@@ -39,6 +39,7 @@ namespace MedControl.API.Controllers
 
                 var token = GenerateJwtToken(user.Id.Value, user.Email);
                 return Ok(new { token });
+
             }
             catch (Exception e)
             {
