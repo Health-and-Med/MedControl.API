@@ -118,7 +118,7 @@ namespace MedControl.Infrastructure.Repositories
                 {
                     await connection.OpenAsync();
 
-                    var medicos = await connection.QueryAsync<MedicosModel>("SELECT * FROM Medicos WHERE EspecialidadeId = @specialty", new { specialty });
+                    var medicos = await connection.QueryAsync<MedicosModel>("SELECT M.*, E.nome Especialidade FROM Medicos M INNER JOIN Especialidades E ON M.EspecialidadeId = E.ID WHERE EspecialidadeId = @specialty", new { specialty });
 
 
                     if (medicos == null)

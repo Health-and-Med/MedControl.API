@@ -11,6 +11,7 @@ namespace MedControl.Domain.Entities
     {
         public int? Id { get; set; }
         public string Nome { get; set; }
+        public string Especialidade { get; set; }
         public string Crm { get; set; }
         public int? EspecialidadeId { get; set; }
         public string Email { get; set; }
